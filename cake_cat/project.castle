@@ -2,7 +2,7 @@
 main: main.lua
 title: Cake Cat
 description: Be a cat! Eat cake! Avoid donuts!
-owner: Platformalist
+owner: platformalist
 coverImage: sprites/castle_card.png
 primaryColor: e6b8c1
 unlisted: false
