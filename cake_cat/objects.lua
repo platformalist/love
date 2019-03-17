@@ -5,9 +5,9 @@ function object_init()
 	cake = {}
 end
 
-function object_update()
+function object_update(dt)
 	for k,v in ipairs(ball) do
-		ball_update(v)
+		ball_update(v,dt)
 	end
 	for k,v in ipairs(cake) do
 		cake_update(v)
@@ -97,13 +97,13 @@ function ball_make()
 	return new_ball
 end
 
-function ball_update(v)
+function ball_update(v,dt)
 	-- set original location
 	local tx,ty = v.x,v.y
 
 	-- move ball
-	v.x = v.x + v.xd
-	v.y = v.y + v.yd
+	v.x = v.x + v.xd * dt * dtAdjust
+	v.y = v.y + v.yd * dt * dtAdjust
 
 
 	-- hit detection
