@@ -10,7 +10,7 @@ function object_update(dt)
 		ball_update(v,dt)
 	end
 	for k,v in ipairs(cake) do
-		cake_update(v)
+		cake_update(v,dt)
 	end
 end
 
@@ -42,7 +42,7 @@ function cake_make()
 	return new_cake
 end
 
-function cake_update(v)
+function cake_update(v,dt)
 	-- check if overlapping when first spawned
 	if v.overlap == true then
 		local q = 0
@@ -65,7 +65,7 @@ function cake_update(v)
 	end
 	--animation
 	if v.s < 10.75 then
-		v.s = v.s + .25
+		v.s = v.s + .25 * (dt * dtAnimAdjust)
 	else
 		v.s = 1
 	end
@@ -179,7 +179,7 @@ function ball_update(v,dt)
 
 	--animation
 	if v.s < 22.75 then
-		v.s = v.s + .25
+		v.s = v.s + .25 * (dt * dtAnimAdjust)
 	else
 		v.s = 11
 	end
