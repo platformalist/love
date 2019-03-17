@@ -36,7 +36,7 @@ function title_drop_behavior()
 	end
 end
 
-function ui_update()
+function ui_update(dt)
 	if state == 1 or
 		state == 3 then
 		-- slide in the title card and instructions
@@ -65,7 +65,7 @@ function ui_update()
 	
 	-- move title card up and down on a sin wave
 	if title.t < 3 then
-		title.t = title.t + .05
+		title.t = title.t + .05 * (dt * dtAnimAdjust)
 	else
 		title.t = -3.1
 	end
