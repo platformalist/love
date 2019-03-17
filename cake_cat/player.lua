@@ -17,7 +17,7 @@ function player_init()
 	}
 end
 
-function player_update()
+function player_update(dt)
 	-- set starting point
 	local tx,ty = p.x,p.y
 
@@ -37,8 +37,8 @@ function player_update()
 	
 	-- max speed values
 	p.xd,p.yd = norm_vector(p.xd,p.yd,p.maxv)
-	p.x = p.x + p.xd
-	p.y = p.y + p.yd
+	p.x = p.x + p.xd * dt * dtAdjust
+	p.y = p.y + p.yd * dt * dtAdjust
 	
 	-- apply momentum
 	p.xd = p.xd * p.m
