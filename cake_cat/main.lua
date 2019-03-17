@@ -113,6 +113,9 @@ function love.update(dt)
 end
 
 function love.draw()
+	-- set screen in middle of castle panel
+	local ww, wh = love.graphics.getDimensions()
+	love.graphics.translate(0.5 * (ww - 512), 0.5 * (wh - 512))
 	col(1)
 	default_draw()
 	bg_draw()
@@ -127,8 +130,5 @@ function test_update()
 end
 
 function test_draw()
+
 end
-
-
-
-
