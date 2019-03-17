@@ -145,8 +145,8 @@ function ui_draw()
 	love.graphics.rectangle("fill",0,-1,-400,257)
 	love.graphics.rectangle("fill",256,0,356,257)
 	-- top and bottom bars
-	love.graphics.rectangle("fill",0,0,257,-400)
-	love.graphics.rectangle("fill",0,256,256,356)
+	love.graphics.rectangle("fill",-400,0,1000,-400)
+	love.graphics.rectangle("fill",-400,256,1000,356)
 
 	-- pause screen
 	col(1)
