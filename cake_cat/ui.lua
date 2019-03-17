@@ -120,7 +120,9 @@ function ui_draw()
 
 	-- draw title screen at start	
 	col(1)
+	if title.introDrop > -120 then
 	love.graphics.draw(spriteBank.titlecard,title.x,title.y + title.introDrop,0,1,1,6)	
+	end
 	love.graphics.draw(spriteBank.instructioncard,6 + title.introSlide,179,0,1,1,6)	
 	love.graphics.draw(spriteBank.eggnog,40 + title.introSlide,134,0,1,1,6)	
 	love.graphics.draw(spriteBank.eggnog,161- title.introSlide,134,0,1,1,6)	
