@@ -140,7 +140,7 @@ function ui_draw()
 
 	-- sidebars
 	col(2)
-	love.graphics.rectangle("fill",0,-1,-100,257)
+	love.graphics.rectangle("fill",0,-1,-400,257)
 	love.graphics.rectangle("fill",256,0,356,257)
 	
 	-- pause screen
