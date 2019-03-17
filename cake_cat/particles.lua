@@ -18,13 +18,13 @@ end
 
 
 function bump(j,k)
-	for i = 1,20 do
+	for i = 1,10 do
 		table.insert(crumb,crumb_make(j,k,9,7,rnd(0,1)))
 	end
 end
 
 function chomp(j,k)
-	for i = 1,20 do
+	for i = 1,15 do
 		table.insert(crumb,crumb_make(j,k,5,4,rnd(0,3)))
 	end
 end
