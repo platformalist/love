@@ -38,6 +38,11 @@ function love.load()
 	require("objects")
 	require("particles")
 
+	-- delta adjust - once speeds are multiplied by delta time, they need to be
+	-- increased by a set amount to get objects moving at the proper speed again.
+	-- wouldn't be necessary if delta time was included in the code from the start.
+	dtAdjust = 44
+	
 	-- global vars
 	state = 1
 	resetTimer = 15
@@ -98,8 +103,8 @@ function love.update(dt)
 	if state == 1 then
 		player_animation()
 	elseif state == 2 then
-		object_update()
-		player_update()
+		object_update(dt)
+		player_update(dt)
 		game_rules()
 	end
 	particle_update()
