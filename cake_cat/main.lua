@@ -41,7 +41,8 @@ function love.load()
 	-- delta adjust - once speeds are multiplied by delta time, they need to be
 	-- increased by a set amount to get objects moving at the proper speed again.
 	-- wouldn't be necessary if delta time was included in the code from the start.
-	dtAdjust = 44
+	dtAdjust = 53
+	dtAnimAdjust = 40
 	
 	-- global vars
 	state = 1
@@ -99,9 +100,9 @@ end
 
 function love.update(dt)
 	default_update()
-	ui_update()
+	ui_update(dt)
 	if state == 1 then
-		player_animation()
+		player_animation(dt)
 	elseif state == 2 then
 		object_update(dt)
 		player_update(dt)
