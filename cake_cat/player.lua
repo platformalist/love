@@ -23,22 +23,22 @@ function player_update(dt)
 
 	-- move player w arrow keys
 	if btn("left","a") then
-		p.xd = p.xd - p.acc
+		p.xd = p.xd - p.acc * (dt * dtAnimAdjust)
 		p.sf = 1
 	elseif btn("right","d") then
-		p.xd = p.xd + p.acc
+		p.xd = p.xd + p.acc * (dt * dtAnimAdjust)
 		p.sf = -1
 	end
 	if btn("up","w") then
-		p.yd = p.yd - p.acc
+		p.yd = p.yd - p.acc * (dt * dtAnimAdjust)
 	elseif btn("down","s") then
-		p.yd = p.yd + p.acc
+		p.yd = p.yd + p.acc * (dt * dtAnimAdjust)
 	end
 	
 	-- max speed values
 	p.xd,p.yd = norm_vector(p.xd,p.yd,p.maxv)
-	p.x = p.x + p.xd * dt * dtAdjust
-	p.y = p.y + p.yd * dt * dtAdjust
+	p.x = p.x + p.xd * (dt * dtAdjust)
+	p.y = p.y + p.yd * (dt * dtAdjust)
 	
 	-- apply momentum
 	p.xd = p.xd * p.m
@@ -56,16 +56,16 @@ function player_update(dt)
 		p.y = ty
 	end
 	
-	player_animation()
+	player_animation(dt)
 	
 end
 
-function player_animation()
+function player_animation(dt)
 	if math.abs(p.xd) < .1 and
 		math.abs(p.yd) < .1 then
 		-- idle animation
 		if p.s < 8.75 then
-			p.s = p.s + .25
+			p.s = p.s + .25 * (dt * dtAnimAdjust)
 		else
 			p.s = 1
 		end
@@ -75,7 +75,7 @@ function player_animation()
 			p.s < 9 then
 			p.s = 9
 		else
-			p.s = p.s + .25
+			p.s = p.s + .25 * (dt * dtAnimAdjust)
 		end
 	end
 end
