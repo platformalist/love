@@ -64,7 +64,7 @@ function cake_update(v,dt)
 
 	end
 	--animation
-	if v.s < 10.75 then
+	if v.s < 10.5 then
 		v.s = v.s + .25 * (dt * dtAnimAdjust)
 	else
 		v.s = 1
@@ -178,7 +178,7 @@ function ball_update(v,dt)
 	end
 
 	--animation
-	if v.s < 22.75 then
+	if v.s < 22.5 then
 		v.s = v.s + .25 * (dt * dtAnimAdjust)
 	else
 		v.s = 11
