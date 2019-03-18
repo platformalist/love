@@ -64,14 +64,14 @@ function player_animation(dt)
 	if math.abs(p.xd) < .1 and
 		math.abs(p.yd) < .1 then
 		-- idle animation
-		if p.s < 8.75 then
+		if p.s < 8.5 then
 			p.s = p.s + .25 * (dt * dtAnimAdjust)
 		else
 			p.s = 1
 		end
 	else
 		-- running animation
-		if p.s > 12.5 or
+		if p.s > 12.25 or
 			p.s < 9 then
 			p.s = 9
 		else
